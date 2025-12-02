@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уран: Мұзды Алып Анализі</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Настройка шрифтов и цветов (Уран стилі) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'black-void': '#000000',
+                        'uranus-primary': '#67e8f9', // Ашық көкшіл (Cyan 300)
+                        'uranus-accent': '#a78bfa', // Күлгін-көк (Violet 400)
+                        'dark-slate': '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Consolas', 'Monaco', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Полностью черный фон для "космического" вида */
+        body {
+            background-color: #000000;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Эффект свечения для заголовков и карточек (Уран киберпанк стиль) */
+        .neon-glow {
+            text-shadow: 0 0 5px #67e8f9, 0 0 10px #67e8f9; /* Ашық көкшіл свечение */
+            transition: all 0.3s;
+        }
+        
+        .card-border {
+            border: 1px solid rgba(103, 232, 249, 0.3); /* Легкая рамка (Көкшіл) */
+            box-shadow: 0 0 15px rgba(103, 232, 249, 0.4); /* Неоновое свечение */
+        }
+        
+        .card-border:hover {
+            box-shadow: 0 0 25px rgba(103, 232, 249, 0.7), 0 0 40px rgba(103, 232, 249, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Список фактов */
+        .fact-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .fact-item::before {
+            content: ">>"; /* Футуристический маркер */
+            color: #a78bfa; /* Күлгін-көк маркер */
+            position: absolute;
+            left: 0;
+            font-family: 'Monospace', monospace;
+        }
+
+        .fact-title {
+            color: #67e8f9; /* Уранның негізгі түсі */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-7xl font-extrabold text-white mb-2 tracking-wider">
+            <!-- БАСТЫ ТАҚЫРЫП -->
+            <span class="neon-glow text-uranus-primary">УРАН</span>
+        </h1>
+        <p class="text-2xl text-uranus-accent font-mono">Мұзды алып: Ақпараттық Массив</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto">
+        
+        <!-- Главная карточка Уран -->
+        <section class="p-8 md:p-12 bg-dark-slate card-border rounded-xl mb-12">
+            <div class="flex flex-col items-center justify-center mb-6">
+                
+                <!-- УРАННЫҢ ФОТОСЫ ОСЫ ЖЕРДЕ -->
+                <img 
+                    src="4.png"
+                    alt="Уран планетасының фотосы"
+                    class="w-60 h-60 rounded-full object-cover mb-4 border-2 border-uranus-accent shadow-xl shadow-uranus-accent/50"
+                    onerror="this.onerror=null; this.src='https://placehold.co/80x80/000000/67e8f9?text=URANUS%0A4.PNG'"
+                >
+                
+                <h2 class="text-4xl font-bold text-uranus-primary">Уран</h2>
+                <p class="text-lg text-slate-400 mt-2 font-mono">Аспан денесінің ерекшелігі: Системалық сипаттама</p>
+            </div>
+
+            <!-- Общая информация -->
+            <div class="text-lg leading-relaxed text-center mb-8 border-b border-gray-700 pb-6">
+                <p class="text-slate-200">
+                    Уран — Күн жүйесіндегі жетінші планета және үшінші үлкен планета. Ол "мұзды алып" деп жіктеледі, себебі оның құрамында газды алыптарға қарағанда мұзды ұшпа заттар (су, метан, аммиак) көп. Уранның ең ерекшелігі — оның <span class="text-uranus-accent font-bold">жанымен жатып айналуы</span>, бұл оны басқа планеталардан ерекшелейді.
+                </p>
+            </div>
+
+            <!-- Интересные факты (Қызықты Деректер) -->
+            <h3 class="text-2xl font-semibold text-uranus-accent mb-6 neon-glow border-b border-uranus-accent pb-2">
+                Қызықты Деректер (DATA ARRAY)
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm md:text-base">
+                
+                <div class="fact-item">
+                    <span class="fact-title">Жанымен Жату:</span>
+                    Уранның айналу осі 98 градусқа еңкейген, яғни ол Күнді <span class="text-uranus-primary">бүйірімен жатып</span> айналады.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Ең Суық Планета:</span>
+                    Уранның атмосферасында тіркелген ең төменгі температура <span class="text-uranus-accent">-224 °C</span> шамасында, бұл оны Күн жүйесіндегі ең суық планета етеді.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Көк Түс:</span>
+                    Оның көгілдір-жасыл түсі атмосферадағы <span class="text-uranus-primary">метан газының</span> қызыл жарықты сіңіріп, көк жарықты шағылыстыруынан туындайды.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Жарты Жылдық Тәулік:</span>
+                    Оның жанымен жатуына байланысты, полюстердің бірі Күн сәулесін 42 Жер жылы бойы алады, содан кейін 42 жыл қараңғылықта болады.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Сақиналар Жүйесі:</span>
+                    Уранның Юпитер, Сатурн сияқты өзінің <span class="text-uranus-accent">13 жіңішке сақинасы</span> бар. Олар өте қараңғы және ұсақ бөлшектерден тұрады.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Спутниктер:</span>
+                    Уранның 27 белгілі серігі бар. Олардың барлығы Шекспир мен Александр Поуп шығармаларындағы кейіпкерлердің құрметіне аталған.
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-auto p-4 text-slate-600 text-sm">
+        <p class="font-mono">
+            [ КОНЕЦ ПЕРЕДАЧИ ДАННЫХ ] | Кәсіби даму мақсатында жасалған.
+        </p>
+    </footer>
+
+</body>
+</html>
